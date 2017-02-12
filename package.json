@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A website for Canadian Steam",
   "license": "ISC",
+  "scripts": {
+    "build": "webpack --bail -p",
+    "watch": "webpack --watch -d --progress --color"
+  },
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",

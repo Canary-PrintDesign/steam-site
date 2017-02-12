@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - '6'
+before_install:
+  - rvm install 2.3.3
+cache:
+  bundler: true
+  directories:
+    - node_modules
+install:
+  - bundle install
+  - npm install
+script:
+  - bundle exec middleman build
+  - bundle exec middleman sync
+env:
+  global:
+    - SKIP_SASS_BINARY_DOWNLOAD_FOR_CI=true
+    - AWS_REGION='us-west-2'
+    - AWS_BUCKET='www.canadiansteam.com'
+    - AWS_ACCESS_KEY_ID=AKIAIWEOSL5DF26X776A
+  matrix:
+    secure: AsgVaLjfXwv+6o/XK7XRxhN/Fx2A4NgzbAai8p6g5TcAVZnTTgnwUTONKRtobxcewW2MITj4cr5+j/jMyC4kErCy05Hlu4D7OoHJnPRphG+OYT8cFUgoQJuBOLhBKaLx4m4S1Yj2Dt8WaTwC2kYOzAwTzpUy1aY6sUTbhGpJhUStclsU0OaiKI6wkB3UQvn1J7KAVsTZXH40XIE7dMCQDfNpUFRog0rYCYSbE+rKIelW5S6ojDdzPZ9mn7JLVb40+rfLOv27PbQYOAJhfFrcd+90RweyGPXsJZARLrNYtq2L4GyKqfN1eM+gbObOAs9aeZxGb/njXs+vk0ASBH2T7n7ogcGAtU4K2mOq2H00aDGiTlJ552KeWQjpORxeqT/4DNzo0bsXp8DgceqrqTYA1h8/XBWbeqCGzrskubyaxPgmT1XSWjc9ysLeZfJQw/dY3YTBxiIh1FuEygCrXV38UzqozUqxYsEu86wlOG/gAI1dYbOATtoGCESjdQWePotRxevQhlxYlZfkZX4xSjxsIG+nB4YDr8iQcB2pXUnFiUtv/KOzICn9qCJqHXyUIMZIZOKwnsNSW+R/fPnMbZHBUan8Ozt1o2a/Y5sG0vmrnzDKymbpKoUBLFma5Sd6+rqZTvadLNeS6fRh7ilUISxVNihwIh2RxE4JmicXuEOUgZM=

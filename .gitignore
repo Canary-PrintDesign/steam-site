@@ -23,4 +23,4 @@
 .DS_Store
 
 # Ignore super-secret S3 codes
-.s3_sync
+.env
