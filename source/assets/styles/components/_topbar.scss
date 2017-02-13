@@ -1,0 +1,18 @@
+$ratio-logo: 1619px / 372px;
+$width-logo: 200px;
+
+.topbar {
+  background: $white;
+
+  .brand-link {
+    background: url('../images/logo_full_size.png') 100% / 100%;
+    width: $width-logo;
+    height: $width-logo / $ratio-logo;
+    text-indent: -9999px;
+  }
+}
+
+.mdl-layout__drawer-button,
+.mdl-layout__header-row .mdl-navigation__link {
+  color: $color-body;
+}

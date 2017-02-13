@@ -48,7 +48,8 @@ var siteConfig = {
             loader: "sass-loader",
             options: {
               includePaths: [
-                require('path').dirname(require.resolve('normalize-scss'))
+                require('path').dirname(require.resolve('normalize-scss')),
+                path.resolve(__dirname, 'node_modules')
               ]
             }
           }],

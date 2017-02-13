@@ -6,15 +6,29 @@
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "Middleman" %></title>
+    <title><%= current_page.data.title || "Canadian Steam LTD" %></title>
 
     <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <%= stylesheet_link_tag 'main.bundle' %>
-    <%= javascript_include_tag 'main.bundle' %>
   </head>
 
   <body class="<%= page_classes %>">
-    <%= yield %>
+    <!-- Uses a header that contracts as the page scrolls down. -->
+    <div class="mdl-layout mdl-js-layout">
+      <%= partial "topbar" %>
+
+
+      <%= partial "leftnav" %>
+
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
+
+    <%= javascript_include_tag 'main.bundle' %>
   </body>
 </html>

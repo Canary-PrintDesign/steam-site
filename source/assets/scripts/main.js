@@ -9,3 +9,7 @@ if (__DEBUG__) {
 if (__BUILD__) {
   console.log("Welcome to Go99!");
 }
+
+import 'material-design-lite';
+
+import './pages/home';
